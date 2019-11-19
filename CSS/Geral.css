@@ -1,0 +1,126 @@
+/*Todas as páginas*/
+
+body 
+{
+    background-image: url('..//Imagens/background.png');
+}
+
+#navbar 
+{
+    border-radius: 20px;
+    background-color: rgba(39, 166, 226, 0.5);
+    font-size: 20px;
+    font-weight: bold;    
+}
+
+.H1_titulo
+{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.H2_titulo
+{
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+/* Botões */
+.botao_incluir
+{
+    height: 80px;
+    width: 120px;
+    font-size: 30px;
+}
+
+.botoes_grade
+{
+    height: 55px;
+    width: 80px;
+}
+
+/*Show Produtos*/
+
+.h2_show 
+{
+    text-align: center;
+}
+
+.span_info_produto 
+{
+    text-align: center;
+    font-size: 25px;
+}
+
+.produto_descricao
+{
+    justify-content: left;
+}
+
+#section_img 
+{
+    justify-content: center;
+}
+
+.btn_produto 
+{
+    align-items: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+/* Usuarios*/
+
+.senha_user 
+{
+    width: 50%;
+}
+
+/* Grades de consultas, Labels e forms*/
+.Status_Ativo
+{
+    color: black;
+    font-size: 20px;
+}
+
+/* Grades de consultas*/
+.Status_Inativo
+{
+    background-color: #ffffe0;
+    text-decoration: line-through;
+    font-size: 20px;
+}
+
+/* Grades de consultas */
+.table_format
+{
+    text-align: center; 
+    background-color: white;
+}
+
+/* Botões */
+.central_botao
+{
+    display: flex; 
+    justify-content: center;
+}
+
+
+/* Página do Painel */
+.central_painel
+{
+    display: block;
+    margin: 0 auto;
+}
+
+/* Espaço entre objetos */
+.espaco_objetos
+{
+    color:white; 
+    user-select:none;
+}
+
+
+/* Cadastro de produtos, campo de descrição */
+#produtos_digitar_descri
+{
+    height: 150px;
+}
