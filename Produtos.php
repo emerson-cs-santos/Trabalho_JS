@@ -62,14 +62,16 @@
 
             <script>
 
-                var parametros = '';
-                // Ajax com Jquery e está refazendo apenas a tabela 
-                $.post('PHP/consulta_produtos.php',parametros, function(data)
-                    {
-                        $('#table').html(data);
-                    }
-                )
+                // var parametros = '';
+                // // Ajax com Jquery e está refazendo apenas a tabela 
+                // $.post('PHP/consulta_produtos.php',parametros, function(data)
+                //     {
+                //         $('#table').html(data);
+                //     }
+                // )
 
+                filtrar_produto();
+            
             </script>
 
             <?php

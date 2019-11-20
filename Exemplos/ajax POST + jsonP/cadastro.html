@@ -1,0 +1,33 @@
+
+<form action="cadastrar.php" method="POST">
+    <span>Nome:</span><input id="nome" name="nome" type="text"/>
+    <span>Endereço</span><input name="endereco" id="endereco"  type="text"/>
+    <span>Email</span><input name="email" id="email"  type="text"/>
+    <span>Password</span><input name="pass" id="pass"  type="password"/>
+    <span>Telefone</span><input name="tel" id="tel"  type="text"/>
+    <input id="submit" type="submit"/>
+</form>
+
+<script>
+    document.getElementById ("submit").onclick = function (event) {
+        event.preventDefault ();
+        var ajax = new XMLHttpRequest ();
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                alert (ajax.responseText);
+            }
+        }
+        var nome = document.getElementById ("nome").value;
+        var end = document.getElementById ("endereco").value;
+        var tel = document.getElementById ("tel").value;
+        var pass = document.getElementById ("pass").value;
+        var email = document.getElementById ("email").value;
+        var parametros = "nome="+encodeURIComponent (nome)+"&endereco="+encodeURIComponent(end)+"&email="+encodeURIComponent(email)+"&tel="+encodeURIComponent(tel)+"&pass="+encodeURIComponent(pass);
+        console.log (parametros)
+        ajax.open ("POST","cadastrar.php");
+        ajax.setRequestHeader ("Content-type","application/x-www-form-urlencoded")
+        ajax.send (parametros);
+    }
+
+
+</script>

@@ -81,4 +81,13 @@
 				}
 				
 			echo "</table>";
+
+
+			// Criar vetor para devolver em json
+			$vetor_resposta['end']      = 'Rua senac';
+			$vetor_resposta['bairro']   = 'centro';    
+
+			echo json_encode($vetor_resposta);
+			return;
+
 ?>

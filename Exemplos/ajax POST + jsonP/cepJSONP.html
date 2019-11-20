@@ -1,0 +1,35 @@
+
+<form action="cadastrar.php" method="POST">
+    <span>cep:</span><input id="cep" name="cep" type="text"/>
+ 
+    <input id="submit" type="submit"/>
+</form>
+<script>
+ function djalmaDaGambi (json) {
+        alert (json.logradouro);
+    }
+</script>
+
+<script>
+    
+   
+    
+    document.getElementById ("submit").onclick = function (event) {
+        event.preventDefault ();
+        var ajax = new XMLHttpRequest ();
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                alert (ajax.responseText);
+            }
+        }
+        var cep = document.getElementById ("cep").value;
+       
+        var script = document.createElement ("script");
+        script.src = "https://viacep.com.br/ws/"+cep+"/json/?callback=djalmaDaGambi";
+        document.body.append (script);
+
+
+    }
+
+
+</script>
