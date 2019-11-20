@@ -198,12 +198,7 @@ function desativar_produto(ID_para_desativar)
                     )
             }
 
-            // Ajax com Jquery e está refazendo apenas a tabela 
-			$.post('PHP/consulta_produtos.php',desativar, function(data)
-				{
-					$('#table').html(data);
-				}
-			)            
+            tabela_render_produtos('');          
         }      
     }
     // MODO POST
@@ -277,12 +272,7 @@ function deletar_produto_parte2(ID_para_deletar)
                     )
             }
 
-            // Ajax com Jquery e está refazendo apenas a tabela 
-			$.post('PHP/consulta_produtos.php',deletar, function(data)
-				{
-					$('#table').html(data);
-				}
-			)
+            tabela_render_produtos('');
         }      
     }
     //MODO POST

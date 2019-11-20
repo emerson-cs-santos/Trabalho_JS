@@ -56,22 +56,18 @@
                         </select>
                     </div>                 
 
-                    <div id='table' class='container mt-3'> </div>
+                    <div class='container mt-3'> 
+                        <div class='row-fluid'>
+                            <div class='col-xs-6'>
+                                <div id='table' class='table-responsive'>
+                                    <table> </table>       
+
+                    </div>
                 </section>  
             </main>
 
             <script>
-
-                // var parametros = '';
-                // // Ajax com Jquery e está refazendo apenas a tabela 
-                // $.post('PHP/consulta_produtos.php',parametros, function(data)
-                //     {
-                //         $('#table').html(data);
-                //     }
-                // )
-
-                filtrar_produto();
-            
+               filtrar_produto();
             </script>
 
             <?php

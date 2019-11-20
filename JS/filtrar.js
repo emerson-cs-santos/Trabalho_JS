@@ -92,45 +92,5 @@ function filtrar_produto()
    
    var parametros = "filtro_produto=" + encodeURIComponent(where);
 
-   // AJAX
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onreadystatechange = function () {
-       if (this.readyState == 4 && this.status == 200) {
-    
-           var resposta = JSON.parse(this.responseText);   
-
-           // Criar tabela na arvore DOM
-           for (i = 0; i < resposta.length; i++) 
-           {
-              
-               var x = document.getElementById("cidades");
-               x.remove(x.i);                              
-               
-               var cidades = document.getElementById("cidades");
-               var option = document.createElement("option");
-               option.text = resposta[i];
-               cidades.add(option);
-           }            
-
-
-       }
-   }
-
-//    // MODO POST
-//    xmlhttp.open("POST", "PHP/login.php", true);
-//    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//    xmlhttp.send(params);
-
-   // MODO GET
-   xmlhttp.open("GET", "PHP/consulta_produtos.php?" + params,true);
-   xmlhttp.send();
-
-
-//    // Ajax com Jquery e está refazendo apenas a tabela 
-//    $.post('PHP/consulta_produtos.php',parametros, function(data)
-//        {
-//            $('#table').html(data);
-           
-//        }
-//    )
+   tabela_render_produtos(parametros);
 }
