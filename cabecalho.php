@@ -88,7 +88,24 @@
 
                             <li class='nav-item'>
                                 <a class='nav-link' href='Painel.php'>Painel</a>
-                            </li>           
+                            </li>       
+
+                            <li class='nav-item'>
+                                <a class='nav-link' id = 'report_erro' onclick="report_erro_exibir()" active>Reportar erro</a>
+                            </li>                                   
                         </ul>
                     </div>
                 </nav>
+                <div id='report_erro_div' style="border-style: groove; border-width: 2px;" hidden>
+                    <div class='central_botao'>
+                        <span style="font-weight: bold;">Por favor digite o que ocorreu:</span>
+                    </div>
+                    
+                    <div class='central_botao'>
+                        <textarea name='' class="" id="report_erro_text" maxlength="2300" rows="5" cols="60"  placeholder = 'Informações do erro'> </textarea>
+                    </div>
+                    
+                    <div class='central_botao' style="margin-top: 8px;">
+                        <input id='report_erro_enviar' type="button" class="" Value = 'Enviar' style="color: #fff; background-color: #007bff; border-color: #007bff" onclick="report_erro()">
+                    </div>
+                </div>
