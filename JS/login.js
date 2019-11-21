@@ -134,7 +134,16 @@ function novo_cadastro(tipo)
         }
     }
 
-    var novo_cadastro = "login=" + encodeURIComponent(novo_login) + "&senha=" + encodeURIComponent(nova_senha) + "&tipo=" + encodeURIComponent(tipo) + "&codigo=" + encodeURIComponent(codigo) + "&status=" + encodeURIComponent(status) + "&md5alteracao=" + encodeURIComponent(fazer_md5_alteracao) + "&email=" + email;
+    var novo_cadastro_obj = new Object ();
+    novo_cadastro_obj.login = novo_login;
+    novo_cadastro_obj.senha = nova_senha;
+    novo_cadastro_obj.tipo = tipo;
+    novo_cadastro_obj.codigo = codigo;
+    novo_cadastro_obj.status = status;
+    novo_cadastro_obj.md5alteracao = fazer_md5_alteracao;
+    novo_cadastro_obj.email = email;
+
+    var novo_cadastro = JSON.stringify (novo_cadastro_obj);    
 
     // Tamanho mínimo da senha
     if (nova_senha.length < 6 || confirma_senha.length < 6 ) 
@@ -324,6 +333,6 @@ function novo_cadastro(tipo)
 
     // MODO POST
     xmlhttp.open("POST", "PHP/novo_user.php", true);
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.setRequestHeader("Content-type", "application/json");
     xmlhttp.send(novo_cadastro);
 }
