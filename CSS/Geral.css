@@ -5,6 +5,20 @@ body
     background-image: url('..//Imagens/background.png');
 }
 
+#report_erro{
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#report_erro:hover{
+    color:red;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 #navbar 
 {
     border-radius: 20px;
