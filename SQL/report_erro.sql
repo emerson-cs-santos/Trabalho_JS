@@ -1,0 +1,6 @@
+-- TABELA DE report_erro
+CREATE TABLE IF NOT EXISTS report_erro 
+	(
+		codigo		INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY
+		,erro_desc	VARCHAR(2500) NOT NULL
+	);
