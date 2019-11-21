@@ -1,13 +1,19 @@
 <?php
 
+/* obtendo o conteudo do body */
+$json =  file_get_contents('php://input');
+
+/* convertendo o body em formato json em objeto php*/
+$cadastro = json_decode ($json);
+
 // MODO POST
-$login			= @$_POST['login'];
-$senha			= @$_POST['senha'];
-$tipo			= @$_POST['tipo'];
-$codigo 		= @$_POST['codigo'];
-$status			= @$_POST['status'];
-$md5_alteracao	= @$_POST['md5alteracao'];
-$email			= @$_POST['email'];
+$login			= $cadastro->login;
+$senha			= $cadastro->senha;
+$tipo			= $cadastro->tipo;
+$codigo 		= $cadastro->codigo;
+$status			= $cadastro->status;
+$md5_alteracao	= $cadastro->md5alteracao;
+$email			= $cadastro->email;
 
 if(!isset($login))
 {

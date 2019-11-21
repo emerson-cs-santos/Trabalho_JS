@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "SENAC_PI";
+$dbname = "trabalho_js";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
@@ -18,7 +18,7 @@ if ($conn->connect_error)
 } 
 
 // SELECIONAR BANCO QUE VAMOS TRABALHAR
-$query = 'use SENAC_PI';
+$query = 'use trabalho_js';
 $result = $conn->query($query);
 
 ?>
