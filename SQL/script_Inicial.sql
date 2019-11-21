@@ -1,7 +1,7 @@
 -- BANCO DE DADOS
-CREATE DATABASE IF NOT EXISTS SENAC_PI;
+CREATE DATABASE IF NOT EXISTS trabalho_js;
 
-USE SENAC_PI;
+USE trabalho_js;
 
 -- Habilitar update no banco de dados
 SET SQL_SAFE_UPDATES = 0;
