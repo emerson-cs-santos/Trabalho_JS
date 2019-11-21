@@ -349,3 +349,75 @@ function tabela_render_produtos(parametros)
     xmlhttp.send();
 
 }
+
+
+function report_erro_exibir()
+{
+    var div_hidden = document.getElementById('report_erro_div');
+
+    if (div_hidden.hidden == true)
+    {
+        div_hidden.hidden = false;
+    }
+    else
+    {
+        div_hidden.hidden = true;
+    }    
+}
+
+function report_erro()
+{
+
+    var report_text = document.getElementById("report_erro_text").value;
+
+    var params = "report_text=" + encodeURIComponent(report_text);
+
+    swal_click = true;
+
+    // AJAX
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var resposta = this.responseText;
+
+            // Tirando ENTER
+            resposta = resposta.replace(/(\r\n|\n|\r)/gm, "");
+
+            switch (resposta) {
+                case 'ok':
+                    swal
+                        (
+                        {
+                            title: "Recebemos seu feedback!",
+                            text: "Obrigado por ajudar a melhorar nosso site!",
+                            icon: "success",
+                            button: "OK",
+                        }
+
+                        ).then
+
+                        (
+                        (swal_click) => {
+                            report_erro_exibir();
+                        }
+                        );
+                    break;
+
+                default:
+                    swal(
+                        {
+                            title: "Problemas ao enviar report!",
+                            text: "Por favor entrar em contato com o administrador do sistema!",
+                            icon: "error",
+                            button: "OK",
+                        }
+                    )
+            }
+        }
+    }
+
+    // MODO POST
+    xmlhttp.open("POST", "PHP/report_erro.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send(params);    
+}
