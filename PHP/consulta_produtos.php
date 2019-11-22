@@ -34,6 +34,13 @@
 
 		$cont = $cont + 1;
 	}
+	
+	// Se não tiver registros
+	if ( $result->num_rows == 0 )
+	{
+		$consulta[0]['Sem_Reg'] = 'Sim';
+	}
+	
 	 echo json_encode($consulta);
 	 return;
 ?>
