@@ -56,8 +56,7 @@ else
                         <h2 class='H2_titulo'> <?php echo $acao; ?> </h2>
                     </div>                      
 
-                        <form action="novo_user.php" method="post">
-
+                        <form>
                             <div class="form-group row Status_Ativo">
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
@@ -120,16 +119,12 @@ else
             <script>
 
                 // Adiciona evento de click nos botões
-                $('#cmd_gravar').click(function()
-                {
-                    novo_cadastro('cadastro');
-                })    
-
-                $('#cmd_voltar').click(function()
-                {
-                    window.open("Usuarios.php", '_self');
-                })
-
+				var botao_gravar = document.getElementById('cmd_gravar');
+				botao_gravar.onclick = function(){ novo_cadastro('cadastro') };
+				
+				var botao_voltar = document.getElementById('cmd_voltar');
+				botao_voltar.onclick = function(){ window.open("Usuarios.php", '_self') };				
+				
             </script>               
 
         <?php
