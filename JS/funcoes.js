@@ -423,6 +423,8 @@ function report_erro()
                         }
                     )
             }
+
+            document.getElementById("report_erro_text").value = '';
         }
     }
 
