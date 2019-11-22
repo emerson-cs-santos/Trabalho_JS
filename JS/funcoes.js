@@ -97,7 +97,7 @@ function tabela_render_produtos(parametros)
        {
             // Retorno em json do PHP
             var resposta = JSON.parse(this.responseText); 
-            
+			
             // Div onde a tabela é removida e criada novamente
             var div_table = document.getElementById('table');
 
@@ -106,8 +106,18 @@ function tabela_render_produtos(parametros)
             div_table.removeChild(table_remover);
 
             // Criar tabela na arvore DOM
-
             var table = document.createElement('table');
+			
+			// Sem registros
+			var sem_reg	= resposta[0]['Sem_Reg'];
+			
+			if ( sem_reg == 'Sim' )
+			{
+				table.innerHTML = 'Não foram encontrados registros...';
+				div_table.appendChild(table);
+				return false;
+			}			
+			
             table.id='produtos_table';
             table.classList.add("table");
             table.classList.add("table-hover");
