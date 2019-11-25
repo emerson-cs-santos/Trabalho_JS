@@ -380,6 +380,19 @@ function report_erro()
 
     var report_text = document.getElementById("report_erro_text").value;
 
+    if (report_text.trim() == '')
+    {
+        swal(
+            {
+                title: "Campo não preenchido!",
+                text: "Por favor informar possíveis problemas no campo de reportar erro!",
+                icon: "warning",
+                button: "OK",
+            }
+        );
+        return;       
+    }
+
     var params = "report_text=" + encodeURIComponent(report_text);
 
     swal_click = true;
