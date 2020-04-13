@@ -1,4 +1,3 @@
-# TSI-PI_2-2019
-Aplicação Web Dinâmica
-E Commerce 
-PI - Projeto Integrador 2 - SENAC 2019
+# JavaScript - Trabalho
+Senac - 2019
+Trabalho de JavaScript - Esse trabalho vai alterar uma cópia do PI 2 (2019) para fazer os exercícios do Trabalho de JavaScript
